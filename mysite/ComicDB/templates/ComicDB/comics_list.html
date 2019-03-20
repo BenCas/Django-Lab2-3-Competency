@@ -1,0 +1,24 @@
+<h1>Comics List</h1>
+<table class="rwd-table">
+  <tr>
+    <th>Title</th>
+    <th>Issue</th>
+    <th>Publisher</th>
+  </tr>
+</thead>
+<tbody>
+{% for comics in object_list %}
+<tr>
+<td>{{ comics.title }}</td>
+<td>{{ comics.issue }}</td>
+<td>{{ comics.publisher }}</td>
+<td>
+<a  href="{% url "comics_detail"  comics.id  %}">details</a>
+
+<a  href="{% url "comics_confirm_delete"  comics.id  %}">delete</a>
+</td>
+</tr>
+
+{% endfor %}
+</tbody>
+</table>
